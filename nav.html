@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background: black;
+  color: #fff;
+  padding: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+
+</style>
+
+<body>
+    <nav>
+   <button id="open">+</button>
+   <ul id="ul" style="display:none;">
+      <li>home</li>
+      <li>home</li>
+      <li>home</li>
+      <li>home</li>
+      <li>home</li>
+   </ul>
+   <button id="close" style="display:none;">-</button>
+</nav>
+
+
+<button title="Click to submit">Submit</button>
+
+<div class="tooltip">Hover me
+  <span class="tooltip-text">This is a tooltip</span>
+</div>
+
+<h1 title="can you see me">i am here</h1>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let open = document.getElementById("open");
+  let house = document.getElementById("ul");
+  let close = document.getElementById("close");
+
+  open.addEventListener("click", function () {
+    house.style.display = "block";
+    close.style.display = "block";
+    open.style.display = "none";
+  });
+
+  close.addEventListener("click", function () {
+    house.style.display = "none";
+    open.style.display = "block";
+    close.style.display = "none";
+  });
+});
+</script>
+</body>
+</html>
