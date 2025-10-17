@@ -48,14 +48,111 @@ constructor(name, price){                     // constructor is like when we giv
 
 displayProduct(){                                 // this is a function but we dont us the word 'function' inside a class
 console.log(`Product: ${this.name}`)
-console.log(`Price: $${this.price}`)
+console.log(`Price: $${this.price.toFixed(2)}`)
 }
+
+calculateTotal(salesTax){                            // this is a function and it has an argument but we dont us the word 'function' inside a class
+    return this.price + (this.price * salesTax)
+    }
 }
+const salesTax = 0.05
 
 const product1 = new Product("shirt", 19.99)            // new means take this value and run the class code with it. i.e  run 'class Product' using   new  Product value
 const product2 = new Product("top", 30.99) 
+const product3 = new Product("pants", 13.899) 
+
+
 product1.displayProduct()                             // invoke it/call the function
 product2.displayProduct()
+product3.displayProduct()
+
+
+const total = product1.calculateTotal(salesTax)              //salesTax = 0.05
+console.log(`total price (with tax): $${total.toFixed(2)}`)
+
+const total2 = product2.calculateTotal(salesTax)              //salesTax = 0.05
+console.log(`total price (with tax): $${total2.toFixed(2)}`)
+
+const total3 = product3.calculateTotal(salesTax)              //salesTax = 0.05
+console.log(`total price (with tax): $${total3.toFixed(2)}`)
+
+
+
+// static = keyword that defines properties/method that belong to a class itself rather than the objects created from that class (class owns anything static, not the objects)
+// this word 'static' is permanent unlike 'constructor' that need 'new' word to perform
+
+class MathUtil{
+ static pi = 3.14159                                               //static is straight forward only make use of '.' to pick value
+
+ static getDiameter(radius){               
+    return radius * 2   
+ }
+ static canbewhatevername(radius){               
+    return  2 * this.pi *radius                                     // 'this' tell pi to pick the one inside the 'class'
+ }
+ static getArea(radius){               
+    return  this.pi * radius  * radius                                 // 'this' tell pi to pick the one inside the 'class'
+ }
+}
+console.log(MathUtil.pi)
+console.log(MathUtil.getDiameter(10))
+console.log(MathUtil.canbewhatevername(10))
+console.log(MathUtil.getArea(10).toFixed(2))
+
+
+//example 2  using both static and constructor
+class   User{
+    static userCount = 0
+
+    constructor(username){                           // constructor is not only for assigning it can take code too (use your brain o)
+        this.username = username                      // assigning to take usernames
+         User.userCount++                                 // code writing to keep counting it as provided
+    }
+
+    sayHello(){
+        console.log(`Hello, my username is ${this.username}`)
+    }
+
+    static getusercount(){
+        console.log(`There are ${User.userCount} user online`)
+    }
+}
+const user1 = new User("jack")
+const user2 = new User("mark")
+const user3 = new User("mia")
+const user4 = new User("ann")
+
+console.log(user1.username)
+console.log(user2.username)
+console.log(user3.username)
+console.log(user4.username)
+console.log(User.userCount)
+
+user1.sayHello()
+user2.sayHello()
+user3.sayHello()
+user4.sayHello()
+
+User.getusercount()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

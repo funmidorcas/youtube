@@ -56,12 +56,12 @@ console.log(message)
 // while loop = repeat some code whiles some condition is true or while this condition is  correct run the condition
 let userName = " "
 
-//  while(userName === " "){
-//     console.log(`you are correct`)
-//     console.log(`you are correct`)
-//     console.log(`you are correct`)
-// break
-//  }
+ while(userName === " "){
+    console.log(`you are correct`)
+    console.log(`you are correct`)
+    console.log(`you are correct`)
+break
+ }
 
 // while (userName === " ") { 
 //   userName = prompt("Enter your name ")
@@ -100,7 +100,7 @@ do{
 console.log(`your name is ${minename}, thanks`)
 
 // let loggedin = false
-// let usename 
+let usename 
 // let password 
 // while(!loggedin){
 //     usename = prompt(`enter your username here`)
