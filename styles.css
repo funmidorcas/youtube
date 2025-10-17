@@ -1,0 +1,67 @@
+body{
+    /* background: conic-gradient(from 150deg at 50% 14%, #c8ff00 0 60deg, #fff0 0 100%);  it gives triangle shape*/  
+background: radial-gradient(circle at 50% 50%, #222222, #010101);
+}
+/* div{
+color: #fff;
+display: flex;
+justify-content: center;
+margin: 100px;
+gap: 20px;
+
+} */
+section{
+    width: 80%;
+    margin-inline: auto;
+    color:aqua;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: space-between;
+    align-items: start;
+    align-content: start;
+}
+
+
+main{
+    width: 80%;
+    margin-inline: auto;
+text-align: center;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+   grid-template-rows: 200px 200px 200px;
+    grid-auto-columns: 50px;
+    grid-auto-rows: 50px;
+    grid-auto-flow: row dense;
+
+    gap:20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div{
+    background: #f11919;
+    padding: 20px;
+    
+}
+div:nth-last-child(1){
+    background: yellow;
+    /* flex-basis: 100px;
+    text-align: center; */
+/* flex-grow: 7; */
+/* align-self: center;
+justify-self: center; */
+}
+div:nth-child(3){
+    background: rgb(0, 110, 255);
+/* flex-grow: 4; */
+       /* grid-row: 3/ span 4;  */
+
+}
+main div:nth-child(5){
+background: #c92f89;
+grid-column-start: 1;
+grid-column-end: 3;
+/* grid-row-start: 1;
+grid-row-end: 3; */
+}

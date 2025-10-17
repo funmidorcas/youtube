@@ -196,6 +196,7 @@ let g = 16
   let ke = 2.11
   let b = 2
   let r = 3
+  console.log(g.toFixed(1)) // 1 decimal place or as required
   let s = Math.round(k)
 console.log(s)
 let u = Math.floor(kk)  // floor: round down like ignore the decimal even if its .99
@@ -224,6 +225,7 @@ let min = Math.min(k,kk,b,r) // it shows minimum value
 console.log(min)
 let max = Math.max(k,kk,r,b) // it shows maximum number
 console.log(max)
+
 
 
 // random number generator
@@ -453,4 +455,24 @@ let emial = email.slice(0, email.indexOf("@"))
 console.log(emial)
 console.log(email.slice(email.indexOf("@") - 3)) // to have the last part 
 
+//.toFixed()  control the decimal
+let yes = 3.412345
+console.log(yes.toFixed(2))
 
+console.log(Number("12.34")) // return strictly number from string that have only number, boolean
+console.log(Number("12a.34")) 
+console.log(parseFloat("12.34")) // not as strict as Number()
+console.log(parseFloat("12a.34")) 
+
+let mark = ["good", "boy"]
+let joinmark =  mark.join("-")
+console.log(joinmark)
+let learn = ["this is a boy","that is a girl","now is the time"]
+let learned = learn.join(" ")
+console.log(learned.split(","))// means split when you see coma(,)
+
+// setTimeout(function, delay) lesson and the function call be a callback or a function expression(check fifth.js for function expression)
+
+setTimeout(() => {
+  console.log("This runs after 2 seconds");
+}, 2000);

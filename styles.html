@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css">
+
+    <title>Document</title>
+</head>
+<body>
+  <!-- <section>
+    <div style="order: 2">box1</div>
+    <div style="order: 4">box2</div>
+    <div style="order: 6">box3</div>
+    <div>box4</div>
+    <div>box5</div>
+    <div>box6</div>
+    <div>box7</div>
+    <div style="order: 5">box8</div>
+    <div>box9</div>
+    <div>box10</div>
+  </section> -->
+    <!-- <main>
+    <div>box1</div>
+    <div>box2</div>
+    <div>box3</div>
+    <div>box4</div>
+    <div>box5</div>
+    <div>box6</div>
+    <div>box7</div>
+    <div>box8</div>
+    <div>box9</div>
+    <div>box10</div>
+</main> -->
+
+
+
+
+  <div>
+    <span class="top">10</span>
+
+    <button class="plus" >+</button>
+<!-- onclick="add()"    onclick="remove"-->
+    <span class="result">0</span>
+    <button class="minus" >-</button>
+    <button class="plus" >+</button>
+    <span class="result">0</span>
+    <button class="minus" >-</button>
+    <button class="plus" >+</button>
+    <span class="result">0</span>
+    <button class="minus" >-</button>
+    <button class="submit">submit</button>
+</div>
+    <script>
+ let plus= document.querySelectorAll(".plus")
+ let minus= document.querySelectorAll(".minus")
+ let result= document.querySelectorAll(".result")
+let total = document.querySelector(".top")
+let submit = document.querySelector(".submit")
+
+let counts = Array(result.length).fill(0)
+
+plus.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    counts[index]++
+    result[index].textContent = counts[index]
+  })
+})
+
+minus.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    if (counts[index] > 0) {
+      counts[index]--
+      result[index].textContent = counts[index]
+    }
+  })
+})
+
+submit.addEventListener("click", function () {
+  let totalCount = counts.reduce((a, b) => a + b, 0)
+  total.textContent = totalCount
+  counts.fill(0)
+  result.forEach(res => res.textContent = 0)
+})
+
+
+// let count = 0
+// // let cart
+// function add(){
+// // array[index] =
+//  count = count + 1
+//  result.textContent = count
+
+// }
+// plus.forEach(add)
+// // console.log(add())
+
+// minus.forEach(remove)
+
+// function remove(count, index, array){
+
+//   if (count > 0) {
+//  count = count - 1
+//  result.textContent = count
+//   }
+// }
+ 
+
+// let count = 0
+// plus.forEach(function(button){
+// button.addEventListener("click", function(index){
+// count =  count + 1
+
+// result.forEach(function(res){
+// res.textContent = count
+// })
+// })
+// })
+
+// minus.forEach(function(button){
+// button.addEventListener("click", function(index){
+// count =  count - 1
+// if(count >= 0){
+// result.forEach(function(res){
+// res.textContent = count
+// })
+// }
+// })
+// })
+
+// submit.addEventListener("click", function(){
+// cart = count
+// total.textContent = cart
+// result.textContent = 0
+// })
+    </script>
+</body>
+</html>
