@@ -1,0 +1,64 @@
+<!-- products.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop Page</title>
+</head>
+<body>
+  <h2>Our Products</h2>
+
+  <div class="product">
+    <img src="shirt.jpg" width="120">
+    <h3 class="name">Cool Shirt</h3>
+    <p class="price">25</p>
+    <input type="number" class="quantity" value="1" min="1">
+    <button class="addToCart">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="jeans.jpg" width="120">
+    <h3 class="name">Blue Jeans</h3>
+    <p class="price">40</p>
+    <input type="number" class="quantity" value="1" min="1">
+    <button class="addToCart">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="hat.jpg" width="120">
+    <h3 class="name">Stylish Hat</h3>
+    <p class="price">15</p>
+    <input type="number" class="quantity" value="1" min="1">
+    <button class="addToCart">Add to Cart</button>
+  </div>
+
+  <br>
+  <button id="checkoutBtn">Go to Checkout</button>
+
+  <script>
+    // Store selected products
+    const cart = [];
+
+    document.querySelectorAll('.addToCart').forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        const productDiv = btn.parentElement;
+
+        const product = {
+          name: productDiv.querySelector('.name').textContent,
+          price: parseFloat(productDiv.querySelector('.price').textContent),
+          image: productDiv.querySelector('img').src,
+          quantity: parseInt(productDiv.querySelector('.quantity').value)
+        };
+
+        cart.push(product);
+        alert(product.name + ' added to cart!');
+      });
+    });
+
+    // Checkout button — save all cart items and move to payment page
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      window.location.href = 'chatgbt2.html';
+    });
+  </script>
+</body>
+</html>

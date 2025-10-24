@@ -369,7 +369,7 @@ console.log(`your total is ${amt - amt * (discount/100)}`)
  
  }
 
- let testScore = 10
+ let testScore = 16
  let letterGrade 
 
   switch(true){

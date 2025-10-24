@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: skyblue;
+
+        }
+        #clock-div{
+            display: flex;
+            justify-content: center;
+            /* align-items: center;
+            height: 100vh; */
+            margin-top: 100px;
+        }
+        #clock{
+font-size: 32px;   
+font-family: monospace;  
+background: rgb(226, 199, 199);
+backdrop-filter: blur(50px);
+padding: 50px;
+border-radius: 10px;
+
+   }
+   #myH1{
+    text-align: center;
+    margin-top: 100px;
+    text-shadow: 2px 2px 2px rgb(201, 14, 14);
+   }
+   #container{
+    border: 2px solid black;
+    padding: 50px;
+    width: 20%;
+    margin-inline: auto;
+border-radius: 10px;
+text-align: center;
+            display: flex;
+flex-direction: column;
+   }
+    </style>
+</head>
+<body>
+   <div id="clock-div">
+    <div id="clock">00:00:00</div>
+   </div> 
+<!-- <hr> -->
+   <h1 id="myH1">Stopwatch</h1>
+   <div id="container">
+    <div id="display">
+        00:00:00:00
+    </div>
+    <div id="controls">
+        <button id="startbtn" onclick="start()">Start</button>
+        <button id="stoptbtn" onclick="stop()">Stop</button>
+        <button id="resettbtn" onclick="reset()">Reset</button>
+    </div>
+   </div>
+   <script src="tenth.js"></script>
+</body>
+</html>

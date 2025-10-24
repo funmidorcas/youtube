@@ -14,14 +14,15 @@ const person2 = {
     favfood: "beans",
     sayHi: function () {console.log(`Hi! i am ${this.name}!`)},
     eat: function() {console.log(`${this.name} is eating ${this.favfood}`)}
-}  // arrow function doesnt not have "this" so use normal function instead in a case like this or more
+}  
 person2.sayHi()
 person2.eat()
 
 // constructor = special method for defining the properties and methods of objects
 
-function Car(make, model, year, color){
-    this.make = make,
+function Car(make, model, year, color){                        // this.pick the argument pass in a function, constructor,  same object
+    this.mass = make,
+    this.make = make,                              // line 24&25 are same, i can name it whatever
     this.model = model,
     this.year = year,
     this.color = color,
@@ -30,6 +31,7 @@ function Car(make, model, year, color){
 const car4 = new Car("jeep", "suv", 2020, "yellow")
 const car5 = new Car("BMW", "muscle", 2022, "black")
 
+console.log(car4.mass)
 console.log(car4.make)
 console.log(car4.model)
 console.log(car4.year)
@@ -46,11 +48,18 @@ constructor(name, price){                     // constructor is like when we giv
     this.price = price
 }
 
-displayProduct(){                                 // this is a function but we dont us the word 'function' inside a class
+displayProduct(extraMessage = ""){                                 // this is a function but we dont us the word 'function' inside a class
 console.log(`Product: ${this.name}`)
 console.log(`Price: $${this.price.toFixed(2)}`)
-}
+  if (extraMessage) 
+      console.log(extraMessage);
 
+}
+displayColor(color, size){
+    console.log(`Color: ${color}`)                    //doesn't take 'this.' bcos the argument is pass outside the constructor
+    console.log(`Size: ${size}`)
+
+}
 calculateTotal(salesTax){                            // this is a function and it has an argument but we dont us the word 'function' inside a class
     return this.price + (this.price * salesTax)
     }
@@ -60,11 +69,13 @@ const salesTax = 0.05
 const product1 = new Product("shirt", 19.99)            // new means take this value and run the class code with it. i.e  run 'class Product' using   new  Product value
 const product2 = new Product("top", 30.99) 
 const product3 = new Product("pants", 13.899) 
+const product4 = new Product("gown", 78.899) 
 
 
-product1.displayProduct()                             // invoke it/call the function
+product1.displayProduct("limited offer:buy 1 get 1 free")                             // invoke it/call the function
 product2.displayProduct()
 product3.displayProduct()
+product4.displayColor("red", 37)
 
 
 const total = product1.calculateTotal(salesTax)              //salesTax = 0.05
@@ -91,7 +102,7 @@ class MathUtil{
     return  2 * this.pi *radius                                     // 'this' tell pi to pick the one inside the 'class'
  }
  static getArea(radius){               
-    return  this.pi * radius  * radius                                 // 'this' tell pi to pick the one inside the 'class'
+    return  this.pi * radius  * radius                                 
  }
 }
 console.log(MathUtil.pi)

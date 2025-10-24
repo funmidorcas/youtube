@@ -73,7 +73,9 @@ function isValid(email){
 // }else{
 //     return "not correct"
 // }
- return email =  email.includes("@") ? "correct" : "not correct"
+  return (email.includes("@") && email.includes(".") && email.includes("com")) ? "correct" : "not correct";
+
+//  return email =  email.includes("@") ? "correct" : "not correct"
 }
 console.log(isValid("ade@gmail"))
 
@@ -81,6 +83,7 @@ console.log(isValid("ade@gmail"))
 // variable can be declare inside functions eg below
 // functions cant see inside another function but function use local variable first bfor global variable
 // global can cause confusion incase of plenty code, so local in this case can be good 
+
 let x = 6   // global vaiable and it will work inside functions
 function get(){
     // let x = 1   // local variable

@@ -1,0 +1,49 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+</head>
+<body>
+  <h2>Your Order Summary</h2>
+  <div id="cartSummary"></div>
+
+  <h3 id="grandTotal"></h3>
+
+  <button id="confirmPayment">Confirm Payment</button>
+
+  <script>
+    // 1️⃣ Get items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // 2️⃣ Display each item
+    const cartSummaryDiv = document.getElementById('cartSummary');
+    let total = 0;
+
+    cartItems.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <hr>
+        <img src="${item.image}" width="80">
+        <h3>${item.name}</h3>
+        <p>Price: $${item.price}</p>
+        <p>Quantity: ${item.quantity}</p>
+        <p><strong>Subtotal:</strong> $${itemTotal}</p>
+      `;
+      cartSummaryDiv.appendChild(div);
+    });
+
+    // 3️⃣ Show grand total
+    document.getElementById('grandTotal').textContent = "Grand Total: $" + total;
+
+    // 4️⃣ Confirm payment (simulation)
+    document.getElementById('confirmPayment').addEventListener('click', () => {
+      alert('Payment Successful! 🎉');
+      localStorage.removeItem('cartItems');
+    });
+  </script>
+</body>
+</html>

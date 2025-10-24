@@ -118,20 +118,24 @@ console.log(numbers)
 // example 2
 let fruits = ["apple", "orange", "banana", "coconut"]
 
-fruits.forEach(upperCase)
-fruits.forEach(lowerCase)
+fruits.forEach(bigCase)
+fruits.forEach(smallCase)
 fruits.forEach(capitalize)
 fruits.forEach(display)
 
-function  display(element){
+function display(element){
+    // console.log(element.toUpperCase())
+  // console.log(element.toLowerCase())
+
   console.log(element)
 }
 
-function upperCase(element, index, array){
-array[index] = element.toUpperCase()
+function bigCase(element, index, array){
+ array[index] = element.toUpperCase()
 }
-function lowerCase(element, index, array){
-array[index] = element.toLowerCase()
+
+function smallCase(element, index, array){
+ array[index] = element.toLowerCase()
 }
 
 
@@ -165,13 +169,13 @@ const studentLower = students.map(lowerCase)
 console.log(studentLower)
 
 function upperCase(element){
-  return element.toUpperCase()
+return element.toUpperCase().split("").join("-");
   // return element.split("").join("-")
 }
 
 function lowerCase(element){
-  // return element.toLowerCase()
-  return element.split("").join("-")
+return element.toLowerCase().split("").join("-"); 
+//  return element.split("").join("-")
 }
 //example 3
 const dates = ["2024-1-10", "2025-2-20", "2026-3-30"]

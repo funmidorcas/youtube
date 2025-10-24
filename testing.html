@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login Page</title>
+<link rel="stylesheet" href="login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c6de6d7637.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  div{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  width: 20%;
+  margin-inline: auto;
+  border: 1px solid red;
+  cursor: pointer;
+  }
+  #pass{
+    border: none;
+    width: 80%;
+  }
+  .butt{
+    border: none;
+    background: transparent;
+  }
+</style>
+<body>
+    <input type="email" id="emailInput" required />
+<button onclick="validateEmail()">Submit</button>
+
+            <div class="input-box">
+              <i class="fa-solid fa-lock icon icn"></i>
+           <input type="password" id="pass" class="input-field" placeholder="password" required>
+     <button class="butt"><i class="fa-solid fa-lock icon icn"></i></button> 
+</div>
+
+<script>
+  function validateEmail() {
+    const email = document.getElementById("emailInput").value;
+    
+    // Simple validation using regex
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (pattern.test(email)) {
+      alert("Valid email!");
+    } else {
+      alert("Invalid email. Please include @ and a domain.");
+    }
+  }
+</script>
+
+
+    <script src="testing.js"></script>
+</body>
+</html>
