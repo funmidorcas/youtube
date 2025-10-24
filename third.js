@@ -101,8 +101,7 @@ let faraheny = document.querySelector("#tofahrent")
 let celcius = document.querySelector("#tocelcius")
 let result = document.querySelector("#result")
 let temp
-box.textContent = box.style.color = "yellow"  //targeting the value css
-
+g
  function convert(){
 if(faraheny.checked){
     // result.textContent="You selected farahiet me"
