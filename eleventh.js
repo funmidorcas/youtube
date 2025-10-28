@@ -16,10 +16,11 @@
 // console.log(mymodule.getArea(10).toFixed(1))
 // console.log(mymodule.getVolume(5).toFixed(3))
 
+
 //synchronous = excute line by line consecutively in a sequential manner. Code that waits for an operation to complete.
 
 //asynchronous = Allows multiple operations to be performed concurrently without waiting. doesnt block the execution flow and allows the program to continue
-//found in operations, mettwork requests, fetching data. Handled with: callbacks, promises, Async/Await
+//found in operations, mettwork requests, fetching data. Handled with: events, callbacks, promises, Async/Await
 // Asynchronous code allows JavaScript to continue running other tasks while waiting for a long operation to finish. It prevents blocking the program.
 
 //example of synchronous code
@@ -111,3 +112,39 @@ Array.from(pelets).forEach(pelet =>{
 pelet.style.backgroundColor = "blue"
 
 })
+
+//DOM Navigation  lesson we have
+//  .firstElementChild, .lastElementChild, .nextElementSibling, .previousElementSibling, .parentElement, .children
+const fruit = document.getElementById("fruit")
+const firstfruit = fruit.firstElementChild
+const lastfruit = fruit.lastElementChild
+const nextfruit = fruit.nextElementSibling
+const prevfruit = fruit.previousElementSibling
+const applechild = document.getElementById("apple")
+const appleparent = applechild.parentElement
+
+
+firstfruit.style.background = "yellow"
+lastfruit.style.background = "coral"
+nextfruit.style.padding = "100px"
+prevfruit.style.margin = "100px"
+appleparent.style.background = "white"
+
+
+const ulItem = document.querySelectorAll("ul")
+ulItem.forEach(function(ul){
+    const allUl = ul.firstElementChild
+    allUl.style.color = "red"
+    const allfruit = ul.lastElementChild
+ allfruit.style.color = "orange"
+
+})
+//.children
+const desert = document.getElementById("desert")
+const desertchild = desert.children
+Array.from(desertchild).forEach(child =>{
+    child.style.background = "white"
+
+})
+// or
+desertchild[1].style.color = "blue"
