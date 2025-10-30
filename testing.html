@@ -10,33 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c6de6d7637.js" crossorigin="anonymous"></script>
 </head>
-<style>
-  div{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  width: 20%;
-  margin-inline: auto;
-  border: 1px solid red;
-  cursor: pointer;
-  }
-  #pass{
-    border: none;
-    width: 80%;
-  }
-  .butt{
-    border: none;
-    background: transparent;
-  }
-</style>
 <body>
     <input type="email" id="emailInput" required />
 <button onclick="validateEmail()">Submit</button>
 
-            <div class="input-box">
-              <i class="fa-solid fa-lock icon icn"></i>
-           <input type="password" id="pass" class="input-field" placeholder="password" required>
-     <button class="butt"><i class="fa-solid fa-lock icon icn"></i></button> 
+<div class="input-container">
+  <i class="fa-solid fa-lock icon icn"></i>
+  <input type="password" id="pass" class="input-field" placeholder="Password" required>
+  <i class="fa-solid fa-lock icon icn2"></i>
 </div>
 
 <script>

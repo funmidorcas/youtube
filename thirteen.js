@@ -77,7 +77,6 @@ console.log(buttons)
 })
 
 
-
 // classList lesson
 const buttonel = document.getElementById("buttonel")
 buttonel.classList.add("enabled")      //.classList.add() will add a specific css style to an item
@@ -85,8 +84,47 @@ buttonel.classList.remove("enabled")    // this will remove css style
 
 // buttonel.classList.add("hover") 
 buttonel.addEventListener("mouseover", event =>{
-    event.target.classList.add("hover")
+    // event.target.classList.add("hover")
+    event.target.classList.toggle("hover") // .toggle() does both work of .add() and . remove()
 })
 buttonel.addEventListener("mouseout", event =>{
-    event.target.classList.remove("hover")
+    // event.target.classList.remove("hover")
+    // event.target.classList.toggle("hover")
+})
+
+//.replace("oldclass", "newclass")
+buttonel.addEventListener("mouseover", event =>{
+    event.target.classList.replace("hover", "disabled")
+})
+buttonel.addEventListener("mouseout", event =>{
+    event.target.classList.replace("disabled", "enabled")
+})
+
+//contains() will return true/false if the conditions are either
+    buttonel.addEventListener("mouseover", event =>{
+ event.target.classList.contains("disabled") ? event.target.textContent += " 😎" :  event.target.classList.replace("enabled", "disabled")
+// if(event.target.classList.contains("disabled")){
+//     event.target.textContent += " 😎" 
+// }else{
+//     event.target.classList.replace("enabled", "disabled")
+// }
+    })
+
+//  document.getElementById("newh1").classList.add("enabled")
+const newh1 =  document.getElementById("newh1")
+newh1.classList.add("enabled")
+
+ newh1.addEventListener("mouseover", event =>{
+    // event.target.classList.add("hover")
+    event.target.classList.toggle("hover") // .toggle() does both work of .add() and . remove()
+})
+
+
+//using .forEach() with classList
+
+buttons.forEach((button)=>{
+button.addEventListener("mouseover", event =>{
+    event.target.classList.toggle("hover") // .toggle() does both work of .add() and . remove()
+})
+
 })

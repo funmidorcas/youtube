@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redText{
+            color:red;
+        }
+        .greenText{
+            color:green;
+        }
+        .slider{
+            justify-items: center;
+            margin-top: 50px;
+            position: relative;
+        }
+        img{
+            width: 300px;
+            display: none;
+        }
+        img.displayslide{
+display: block;
+animation: fade 1.5s;
+        }
+        .prev{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+        left: 38%;
+            margin-top: -22px;
+            color: rgb(197, 40, 40);
+            font-weight: bold;
+                        border: none;
+
+        }
+        .next{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: 38%;
+            width: auto;
+            margin-top: -22px;
+            color: rgb(197, 40, 40);
+            font-weight: bold;
+            border: none;
+        }
+        @keyframes fade {
+            from {opacity: .5}
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rock - Paper - Scissors</h1>
+    <!-- use ' for argument in the onclick i.e 'rock' not to confused the html -->
+    <div id="choices">
+    <button onclick="playgame('rock')">👊</button>
+    <button onclick="playgame('paper')">🖐️</button>
+    <button onclick="playgame('scissors')">👌</button>
+    </div>
+    <div id="playerDisplay">PLAYER:</div>
+    <div id="computerDisplay">COMPUTER:</div>
+    <div id="resultDisplay">PLAYER:</div>
+
+    <div class="scoreDisplay">
+        Player Score:
+<span id="playerscore">0</span>
+    </div>
+    <div class="scoreDisplay">
+        Player Score:
+<span id="computerscore">0</span>
+    </div>
+
+<!-- <hr>   image slider game -->
+
+<div class="slider">
+    <div class="slides">
+        <img src="./img/1.png" alt="" class="slide">
+        <img src="./img/2.png" alt="" class="slide">
+        <img src="./img/3.png" alt="" class="slide">
+    </div>
+    <button class="prev" onclick="prevslide()">&#10094</button>
+    <button class="next" onclick="nextslide()">&#10095</button>
+</div>
+
+
+
+   <script src="fourteen.js"></script> 
+</body>
+</html>

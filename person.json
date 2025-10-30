@@ -1,0 +1,7 @@
+{
+    "name": "funmi",
+    "age": 25,
+    "city": "lagos",
+    "isStudent": false,
+    "hobbies": ["reading", "traveling", "coding"]
+}

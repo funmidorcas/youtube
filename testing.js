@@ -20,7 +20,6 @@ function leave(){
 }
 
 
-let email = prompt("Enter your email");
 
 if (email.includes("@") && email.includes(".")  && email.includes("com")) {
   alert("correct");

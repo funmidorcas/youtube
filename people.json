@@ -1,0 +1,23 @@
+[{
+
+    "name": "funmi",
+    "age": 22,
+    "city": "lagos",
+    "isStudent": true,
+    "hobbies": ["traveling", "coding"]
+},
+{
+    "name": "mia",
+    "age": 20,
+    "city": "Canada",
+    "isStudent": false,
+    "hobbies": ["reading", "traveling"]
+},
+{
+    "name": "ann",
+    "age": 18,
+    "city": "UK",
+    "isStudent": true,
+    "hobbies": ["reading", "coding"]
+
+}]
