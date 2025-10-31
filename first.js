@@ -1,3 +1,4 @@
+// variable lesson
 console.log(`hello world`)
 
 // alert(`learnig js`) 
@@ -29,8 +30,8 @@ document.getElementById("p1").textContent =  `my name is ${fullName}`
 document.getElementById("p2").textContent = `i am ${age} years old`
 document.getElementById("p3").textContent = ` Enroled: ${student}`
 
+// reassignment of variable and arrithmetic operation leson
 let students = 30
-
 console.log(students)
 // reassigning students
 //students = students + 1  // or students++ 
@@ -53,13 +54,10 @@ console.log(students)
  students *= 1;     console.log(students)
 
  students --;       console.log(students)
-
-
-
-
 let result = 1 + 2 * 3 + 4** 2
 console.log(result)
 
+//user input lesson
 let username = prompt("what is your name")
 console.log(username)
 let usename = document.getElementById("myText").value 
@@ -95,7 +93,7 @@ btn.addEventListener("click", function(){
 // })
 
 
-
+//type of change the datatype of a value to another datatype (string,numbers,booleans)
 
 let myAge = prompt("How old are you")
 //type  conversion is the Number use below
@@ -103,17 +101,18 @@ myAge = Number(myAge)
 myAge+=1
  console.log(myAge, typeof myAge)
 
-// i dont knw why this code did not take let
-  x = "pizza"
-  y = "pizza"
-  z ="pizza"
-x= Number(x)
-y = String(y)
-z =Boolean (z)
-console.log(x, typeof x)
-console.log(y, typeof y)
-console.log(z, typeof z)
+ let xi = "pizza"
+ let yi = "pizza"
+ let zi = "pizza"
+xi = Number(xi)
+yi = String(yi)
+zi = Boolean(zi)
+console.log(xi, typeof xi)
+console.log(yi, typeof yi)
+console.log(zi, typeof zi)
 
+
+//constant lesson
 // let pi = 3.14159
 // let radius
 // let circumference
@@ -141,6 +140,7 @@ let circumference = 2 * pi* radiusIn
 console.log(circumference)
 })
 
+// simple counter app lesson
     let increase = document.querySelector("#increasebtn")
  count = 0
     increase.addEventListener("click", function(){
