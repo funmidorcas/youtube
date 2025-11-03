@@ -24,16 +24,12 @@ guess = Number(guess)
 else{
     attempts++
     if(guess < answer){
-        alert(`below, not a mathch`)
+        alert(` not a mathch`)
     }else if(guess >answer){
-        alert(`too much`)
+        alert(`try again`)
     }else{
         alert(`correct, its a match`)
     }
-
-
-
-
     // alert(`try again`)
 }
 break
@@ -96,12 +92,13 @@ function gett(){
 get()
 gett()
 
+// Temperature conversion program 
 let box = document.querySelector("#textbox")
 let faraheny = document.querySelector("#tofahrent")
 let celcius = document.querySelector("#tocelcius")
 let result = document.querySelector("#result")
 let temp
-g
+
  function convert(){
 if(faraheny.checked){
     // result.textContent="You selected farahiet me"
@@ -186,12 +183,14 @@ let foods = [...fruits, ...vegetables,  "eggs", "meat"]
 
 console.log(foods)
  console.log("break line here")
+
+
 //rest parameters: (...rest) is the opposite of spread operator(...).it allow a function with a variable number of arguments by bundling them into an array
 // spread = expands an array into separate elements  // rest= bundles seperate elements into an array
 function openfridge(...foods){
-console.log(foods)
+console.log(...foods)
 }
-function getfood(){
+function getfood(...foods){
     return foods
 }
 let food1 ="pizza"
@@ -210,7 +209,7 @@ function sum(...numbers){
     for (let number of numbers){
         result +=number
     }
-    return result
+    return result / numbers.length
 }
 const total = sum(1,2,3,4,5)
 console.log(`your total is ${total}`)

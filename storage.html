@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invalid{
+            color: red;
+        }
+        .block{
+            display: block;
+        }
+        .format{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <form action="form">
+        <label for="number">Please enter your phone number</label>
+        <input type="text" id="number">
+        <p class="format">(555)555-5555 or 123-456 -7899</p>
+    </form>
+    </section>
+
+    <section><form action="" id="textform">
+        <label for="enter">enter text</label>
+        <input type="text" id="enter" autocomplete="off">
+   <button type="submit" id="submit">Submit</button> 
+    </form></section>
+    <script src="storage.js"></script>
+</body>
+</html>

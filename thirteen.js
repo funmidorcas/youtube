@@ -60,7 +60,7 @@ buttons.forEach((button) =>{
 const newbutton = document.createElement("button")
 newbutton.textContent = "Button 5"
 newbutton.classList = "buttons"
-document.body.appendChild(newbutton);   // appendchild instead of append makes it to inherit the style from css   
+document.body.appendChild(newbutton);   // appendchild instead of append add single item at a time if work is not complex  
 console.log(buttons)
 
  buttons = document.querySelectorAll(".buttons")  // reassign to make it updated

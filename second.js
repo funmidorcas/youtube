@@ -1,5 +1,5 @@
 //method chaining = calling one method after another in one continous line of code 
-// let username = prompt(`ender your username`)
+// let username = prompt(`enter your username`)
  // no method chaining
 let username = "    joHn wekg  "
  username = username.trim()
@@ -14,7 +14,7 @@ let username = "    joHn wekg  "
   username = username.trim().charAt(0).toUpperCase() + username.slice(1).toLowerCase()
   console.log(username)
 
-  //logical operators = and =&&, or == ||, not = !
+  //logical operators = and = &&, or == ||, not = !
 
   let temp = -250
    if(temp > 0){
@@ -134,8 +134,32 @@ console.log(i)
     } 
     for(let i = 1; i <= 20; i++){
 if(i == 13){
-    continue   // continue is keyword like break. it is use to skip line or point 
+    break
+    // continue   // continue is keyword like break. it is use to skip line or point 
  }
 
 console.log(i)
     } 
+
+    //break and continue key word lesson
+   
+    //break lesson
+for(let i = 1; i <= 5; i++){
+  if(i === 3){
+    break;    // Loop stops completely
+  }
+  console.log(i);
+}
+// When i reaches 3, the loop ends, no more numbers.
+
+
+//continue lesson
+
+for(let i = 1; i <= 5; i++){
+  if(i === 3){
+    continue; // Skip number 3, but keep running
+  }
+  console.log(i);
+}
+// It skipped 3 but continued the loop.
+

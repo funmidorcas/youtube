@@ -11,7 +11,7 @@ newh1.style.color = "tomato"
 newh1.style.textAlign = "center"
 
 //step 3 append element to dom, to place it in the begining of body we use .prepend(), last = .append()
-// document.body.append(newh1)                                 // add newh1 to the last in the body 
+// document.body.append(newh1)                    // .append() can add multiple items, text,                        // add newh1 to the last in the body 
 document.getElementById("box").prepend(newh1)           // to add it to our own specific location
 
 // step 4(if need be) remove html element
