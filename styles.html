@@ -75,10 +75,11 @@ minus.forEach((button, index) => {
     }
   })
 })
-
+let grandTotal = 0;
 submit.addEventListener("click", function () {
   let totalCount = counts.reduce((a, b) => a + b, 0)
-  total.textContent = totalCount
+    grandTotal += totalCount;
+  total.textContent = grandTotal
   counts.fill(0)
   result.forEach(res => res.textContent = 0)
 })

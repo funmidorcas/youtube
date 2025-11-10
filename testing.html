@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c6de6d7637.js" crossorigin="anonymous"></script>
+<style>
+.highlight {
+  color: coral;
+  font-size: 20px;
+}
+</style>
 </head>
 <body>
     <input type="email" id="emailInput" required />
@@ -19,6 +25,24 @@
   <input type="password" id="pass" class="input-field" placeholder="Password" required>
   <i class="fa-solid fa-lock icon icn2"></i>
 </div>
+<hr>
+<input type="range" id="slider" min="0" max="100" value="50">
+<span id="output">90</span>
+
+<hr>   
+<button id="like">Like 👍</button>
+
+
+<hr class=".setAttribute lesson">
+<p id="msg">Hello</p>
+<img id="photo" src="./img/2.png">
+<p id="name">Funmi</p>
+<input id="field">
+<a id="link" href="https://google.com">Google</a>
+<img id="photo" src="./img/1.png">
+<p id="text" class="highlight bold">Hello</p>
+<div id="box" data-user="Funmi"></div>
+
 
 <script>
   function validateEmail() {
@@ -33,6 +57,47 @@
       alert("Invalid email. Please include @ and a domain.");
     }
   }
+
+   let slider = document.getElementById("slider");
+  let output = document.getElementById("output");
+
+  slider.addEventListener("input", function(){
+    output.textContent = slider.value;
+  });
+
+function handleClick() {
+  alert("You liked the post!");
+
+  // Remove the listener after first click
+  likeBtn.removeEventListener("click", handleClick);
+}
+
+const likeBtn = document.getElementById("like");
+likeBtn.addEventListener("click", handleClick);
+
+// setAttribute lesson, & .getAttribute("") lesson
+const message = document.getElementById("msg");
+message.setAttribute("style", "color: red; font-weight: bold;");
+
+document.getElementById("photo")
+  .setAttribute("src", "./img/1.png");
+  document.getElementById("name")
+  .setAttribute("class", "highlight");
+
+  document.getElementById("field")
+  .setAttribute("type", "password");
+
+const value = document.getElementById("link").getAttribute("href");
+console.log(value); 
+
+let srcValue = document.getElementById("photo").getAttribute("src");
+console.log(srcValue);
+
+let className = document.getElementById("text").getAttribute("class");
+console.log(className);
+
+let userName = document.getElementById("box").getAttribute("data-user");
+console.log(userName)
 </script>
 
 
