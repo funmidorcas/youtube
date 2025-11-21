@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+/* Thumb styling */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #5727b0; /* thumb color */
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #9c27b0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+    </style>
+</head>
+<body>
+<input type="range" class="slider" id="slider"/>
+<p id="get">0</p>
+<input type="number" id="num1" placeholder="Enter first number">
+<select id="operator">
+  <option value="+">+</option>
+  <option value="-">−</option>
+  <option value="*">×</option>
+  <option value="/">÷</option>
+</select>
+<input type="number" id="num2" placeholder="Enter second number">
+<button onclick="calculate()">Calculate</button>
+<p id="result"></p>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    const slider = document.getElementById("slider");
+    const text = document.getElementById("get");
+
+slider.addEventListener("input", () => {
+  const value = slider.value;
+text.textContent = value
+  // Change color based on value
+  if (value < 33) {
+    slider.style.setProperty('--thumb-color', 'red');
+  } else if (value < 66) {
+    slider.style.setProperty('--thumb-color', 'orange');
+  } else {
+    slider.style.setProperty('--thumb-color', 'green');
+  }
+});
+
+//hr ...
+
+function calculate() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const operator = document.getElementById("operator").value;
+  let result;
+
+  switch (operator) {
+    case "+":
+      result = num1 + num2;
+      break;
+    case "-":
+      result = num1 - num2;
+      break;
+    case "*":
+      result = num1 * num2;
+      break;
+    case "/":
+      result = num2 !== 0 ? num1 / num2 : "Cannot divide by 0";
+      break;
+    default:
+      result = "Invalid operator";
+  }
+
+  document.getElementById("result").textContent = `Result: ${result}`;
+}
+
+
+
+
+
+</script>
+</body>
+</html>
+
+

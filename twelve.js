@@ -125,4 +125,6 @@ document.addEventListener("keydown", event =>{
     }
 })
 
-document.getElementById("boxx").innerHTML = "<h2>Hello</h2><p>This is a paragraph</p>";
+document.getElementById("boxx").innerHTML = "<h2>Hello</h2><p>This is our paragraph</p>";
+// or send text to the html
+// document.getElementById("boxx").innerHTML = "i am here"

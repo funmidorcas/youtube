@@ -23,8 +23,8 @@ localStorage.setItem("mylocalStore", JSON.stringify(myObject))
 // localStorage.removeItem("mylocalStore")    // will retun null, it works
 const mylocalData = JSON.parse(localStorage.getItem("mylocalStore"))
 console.log(mylocalData)
-const key = localStorage.key(0)
-console.log(key)
+// const key = localStorage.key(0)
+// console.log(key)
 // localStorage.clear() 
 
 
@@ -32,7 +32,7 @@ console.log(key)
 localStorage.setItem("myarrayStore", JSON.stringify(myArray))
 // localStorage.removeItem("myLocalStore") // removing the specify item from the storage
 // localStorage.clear()     //clear all the list of items in the storage
-const keys = localStorage.key(0)
+// const keys = localStorage.key(0)
 const length = localStorage.length
 const myLocalData = JSON.parse(localStorage.getItem("myarrayStore"))
 console.log(myLocalData)
