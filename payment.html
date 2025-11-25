@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paymemt</title>
+</head>
+<body>
+    <div class="payment-form">
+  <h2>Make a Payment</h2>
+  <input type="text" id="card-number" placeholder="Card Number" />
+  <input type="number" id="amount" placeholder="Amount (₦)" />
+  <button id="pay-btn">Proceed to Pay</button>
+  <p id="message"></p>
+</div>
+<script>
+    const cardInput = document.getElementById("card-number");
+const amountInput = document.getElementById("amount");
+const payButton = document.getElementById("pay-btn");
+const message = document.getElementById("message");
+
+payButton.addEventListener("click", () => {
+  const cardNumber = cardInput.value.trim();
+  const amount = amountInput.value;
+
+  if (!cardNumber || !amount) {
+    message.textContent = "Please enter all details.";
+    return;
+  }
+
+  // Simulate sending data to backend/payment API
+  fetch("https://example.com/api/payment", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      cardNumber,
+      amount
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        message.textContent = "Payment successful!";
+      } else {
+        message.textContent = "Payment failed. Try again.";
+      }
+    })
+    .catch(() => {
+      message.textContent = "Error connecting to server.";
+    });
+});
+
+</script>
+</body>
+</html>
